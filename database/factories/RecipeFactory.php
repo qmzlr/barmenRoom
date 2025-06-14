@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,19 +11,20 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class RecipeFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            'user_id' => User::query()->inRandomOrder()->first()->id,
-            'title' => fake()->sentence(),
-            'description' => fake()->paragraph(),
-            'likes' => fake()->numberBetween(0, 1000),
-            'image' => fake()->imageUrl(),
-        ];
-    }
+   /**
+    * Define the model's default state.
+    *
+    * @return array<string, mixed>
+    */
+   public function definition(): array
+   {
+      return [
+         'user_id' => User::query()->inRandomOrder()->first()->id,
+         'category_id' => Category::query()->inRandomOrder()->first()->id,
+         'title' => fake()->sentence(),
+         'description' => fake()->paragraph(),
+         'likes' => fake()->numberBetween(0, 1000),
+         'image' => fake()->imageUrl(),
+      ];
+   }
 }

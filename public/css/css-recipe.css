@@ -1,0 +1,68 @@
+main h1 {
+   margin: 20px 0 50px 0;
+   font-family: "MontserratAlternates-ExtraBold";
+   font-size: 64px;
+   color: black;
+   text-align: center;
+}
+
+.resipt {
+   display: flex;
+   gap: 20px;
+}
+
+.resipt img {
+   width: 345px;
+   height: 545px;
+}
+
+
+.info-resipt {
+   width: 100%;
+   margin: 0 0 100px 0;
+}
+
+.info-resipt h2 {
+   font-family: "MontserratAlternates-Medium";
+   font-size: 24x;
+   color: black;
+   margin: 0 0 20px 0;
+}
+
+.ingredients {
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+}
+
+.name-ingredient {
+   display: block;
+   min-width: fit-content;
+   font-family: "MontserratAlternates-Medium";
+   font-size: 24x;
+   color: black;
+   white-space: nowrap;
+   margin-right: 2px;
+}
+
+.quantity-ingredient {
+   width: fit-content;
+   font-family: "MontserratAlternates-Regular";
+   font-size: 24x;
+   color: black;
+   display: block;
+   white-space: nowrap;
+   margin-left: 2px;
+}
+
+
+.ingredients hr {
+   width: 100%;
+   height: auto;
+}
+
+#gap {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}

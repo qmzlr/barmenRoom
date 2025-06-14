@@ -22,7 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'phone'
+        'phone',
+        'date_of_birth',
+        'avatar',
     ];
 
     /**
@@ -38,5 +40,10 @@ class User extends Authenticatable
     public function recipes(): HasMany
     {
         return $this->hasMany(Recipe::class);
+    }
+
+    public function news(): HasMany
+    {
+        return $this->hasMany(News::class);
     }
 }

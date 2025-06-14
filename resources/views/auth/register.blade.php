@@ -1,52 +1,63 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.guest')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+@section('title', 'Регистрация')
+@section('css')
+   <link rel="stylesheet" href="{{asset('css/form.css')}}">
+   @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
+@section('content')
+   <form class="center" method="POST" action="{{ route('register') }}">
+      @csrf
+      <h1>Регистрация</h1>
+      <div>
+         <input id="email" type="email" name="email" value="{{old('email')}}" required
+                autofocus autocomplete="email" placeholder="Email"/>
+         <x-input-error :messages="$errors->get('email')" class=""/>
+      </div>
+      <div>
+         <input id="name" type="text" name="name" value="{{old('name')}}" required
+                autofocus autocomplete="name" placeholder="ФИО"/>
+         <x-input-error :messages="$errors->get('name')" class=""/>
+      </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+      <div>
+         <input id="phone" type="tel" name="phone" value="{{old('phone')}}" required
+                autofocus autocomplete="phone" placeholder="Номер телефон"/>
+         <x-input-error :messages="$errors->get('phone')" class=""/>
+      </div>
+      <div>
+         <input id="date_of_birth" type="date" name="date_of_birth" value="{{old('date_of_birth')}}" required
+                autofocus autocomplete="date_of_birth" placeholder="Дата рождения"/>
+         <x-input-error :messages="$errors->get('date_of_birth')" class=""/>
+      </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+      <div>
+         <input id="password"
+                type="password"
+                name="password"
+                required autocomplete="new-password" placeholder="Пароль"/>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+         <x-input-error :messages="$errors->get('password')" class=""/>
+      </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+      <!-- Confirm Password -->
+      <div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+         <input id="password_confirmation"
+                type="password"
+                name="password_confirmation" required autocomplete="new-password"
+                placeholder="Повторите пароль"/>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+         <x-input-error :messages="$errors->get('password_confirmation')" class=""/>
+      </div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+      <button>Регистрация</button>
+      <p>Продолжая, вы соглашаетесь с положениями основных документов BarmanRoom — Условия предоставления услуг и
+         Политика конфиденциальности — и подтверждаете, что прочли их.</p>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+      <a href="{{route('login')}}">Уже зарегестрированны?<span> Войти</span> </a>
+   </form>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@endsection
+
+

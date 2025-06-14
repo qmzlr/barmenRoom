@@ -1,0 +1,28 @@
+body {
+   margin: 20px 240px 0 240px;
+}
+
+p {
+   margin: 0;
+}
+
+h1 {
+   margin: 0;
+}
+
+h2 {
+   margin: 0;
+}
+
+h3 {
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+   color: unset;
+}
+
+a:hover {
+   text-decoration: underline; /* Можно добавить подчеркивание при наведении */
+}

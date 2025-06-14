@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class NewsController extends Controller
 {
@@ -34,9 +36,10 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(News $news)
+    public function show($id)
     {
-        //
+        $news = News::query()->find($id);
+        return view('news.show', compact('news'));
     }
 
     /**

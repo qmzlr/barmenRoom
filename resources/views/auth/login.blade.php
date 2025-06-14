@@ -1,47 +1,49 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.guest')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('title', 'Вход')
+@section('css')
+   <link rel="stylesheet" href="{{asset('css/form.css')}}">
+   @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+@section('content')
+   <form class="center" method="POST" action="{{ route('login') }}">
+      <h1>{{__('Авторизация')}}</h1>
+      @csrf
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+      <!-- Email Address -->
+      <div>
+         <input id="email" class="block" type="email" name="email" value="{{old('email')}}" required
+                autofocus autocomplete="username" placeholder="Email"/>
+         <x-input-error :messages="$errors->get('email')" class="mt-2"/>
+      </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+      <!-- Password -->
+      <div class="mt-4">
+         <input id="password" class="block"
+                type="password"
+                name="password"
+                required autocomplete="current-password" placeholder="Пароль"/>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+         <x-input-error :messages="$errors->get('password')" class="mt-2"/>
+      </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+      <!-- Remember Me -->
+      <div class="flex items-center justify-end mt-4">
+         <input id="remember_me" type="checkbox"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                style="width: 16px; height: 16px" name="remember">
+         <span class="ml-2" style="width: auto">{{ __('Remember me') }}</span>
+      </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+      <button type="submit">{{__('Авторизация')}}</button>
+      <p>{{__('Продолжая, вы соглашаетесь с положениями основных документов BarmanRoom — Условия предоставления услуг и
+         Политика конфиденциальности — и подтверждаете, что прочли их.')}}</p>
+
+      <a href="{{route('register')}}">{{__('Нету аккаунта?')}}<span>{{__(' Зарегестрироваться')}}</span> </a>
+
+      <a href="{{route('home')}}" style="margin-top: 20px; color: red;">{{__('Назад')}}</a>
+   </form>
+
+@endsection
