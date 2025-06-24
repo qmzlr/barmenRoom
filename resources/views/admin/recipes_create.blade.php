@@ -4,17 +4,7 @@
     <script src="{{ asset('js/js.js') }}"></script>
 @endsection
 @section('content')
-    <div id="navPanelByID" class="navPanel">
-        <a href="{{route('admin.recipes.create')}}">
-            <button id="showAddForm">Добавить рецепт</button>
-        </a>
-        <a href="{{ route('admin.recipes.index') }}">
-            <button>Список рецептов</button>
-        </a>
-        <a href="{{ route('admin.users.index') }}">
-            <button>Список пользователей</button>
-        </a>
-    </div>
+    @include('includes.admin_nav')
     <h1>Создание рецепта</h1>
     <form action="{{ route('admin.recipes.store') }}" method="post" enctype="multipart/form-data">
         @csrf
