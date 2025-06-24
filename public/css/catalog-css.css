@@ -1,122 +1,124 @@
 .card-resipt {
-   display: flex;
-   flex-direction: column;
-   margin: 20px 0 0 0;
-   width: 345px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+    width: 345px;
 }
 
 .card-position {
-   flex-wrap: wrap;
-   display: flex;
-   flex-direction: row;
-   gap: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .card-resipt h1 {
-   font-size: 36px;
-   font-family: "MontserratAlternates-Medium";
-   margin: 20px 0 0 0;
+    font-size: 36px;
+    font-family: "MontserratAlternates-Medium";
+    margin: 20px 0 0 0;
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .card-resipt p {
-   font-size: 24px;
-   font-family: "MontserratAlternates-Regular";
-   margin: 5px 0 0 0;
+    font-size: 24px;
+    font-family: "MontserratAlternates-Regular";
+    margin: 5px 0 0 0;
 }
 
 .card-resipt img {
-   width: 345px;
-   height: 545px;
-   border-radius: 16px;
+    width: 345px;
+    height: 545px;
+    border-radius: 16px;
 }
 
 .content-right h1 {
-   font-family: 'MontserratAlternates-ExtraBold';
-   font-size: 32px;
-   color: black;
-   margin: 20px 0 10px 0;
+    font-family: 'MontserratAlternates-ExtraBold';
+    font-size: 32px;
+    color: black;
+    margin: 20px 0 10px 0;
 }
 
 .first-catalog {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin: 0 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 40px 0;
 }
 
 .first-catalog h1 {
-   font-size: 36px;
-   font-family: "MontserratAlternates-Medium";
-   margin: 20px 0 0 0;
+    font-size: 36px;
+    font-family: "MontserratAlternates-Medium";
+    margin: 20px 0 0 0;
 }
 
 .first-catalog input {
-   width: 300px;
-   height: 40px;
-   border: 1px solid #000000;
-   padding: 0px 0 0 10px;
-   border-radius: 16px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000000;
+    padding: 0px 0 0 10px;
+    border-radius: 16px;
 }
 
 .first-catalog input:focus {
-   outline: 0;
+    outline: 0;
 }
 
 .first-catalog input::placeholder {
-   color: #000000;
-   font-family: "MontserratAlternates-Ligh";
+    color: #000000;
+    font-family: "MontserratAlternates-Ligh";
 }
 
 .filter {
-   display: flex;
-   gap: 30px;
-   align-items: center;
-   justify-content: space-between;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .select label {
-   font-size: 20px;
-   font-family: "MontserratAlternates-Medium";
-   margin: 0 10px 0 0;
+    font-size: 20px;
+    font-family: "MontserratAlternates-Medium";
+    margin: 0 10px 0 0;
 }
 
 .select select {
-   font-size: 16px;
-   font-family: "MontserratAlternates-Ligh";
-   margin: 0 0px 0 0;
+    font-size: 16px;
+    font-family: "MontserratAlternates-Ligh";
+    margin: 0 0px 0 0;
 }
 
 .select select:hover {
-   color: #00C8FF;
-   border: 1px solid #00C8FF;
+    color: #00C8FF;
+    border: 1px solid #00C8FF;
 }
 
 .button {
-   display: flex;
-   gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .button button {
-   font-family: "MontserratAlternates-Ligh";
-   font-size: 16px;
-   color: #00C8FF;
-   background: none;
-   border: solid 1px #00C8FF;
-   border-radius: 16px;
-   width: 200px;
-   height: 40px;
-   transition: 300ms;
+    font-family: "MontserratAlternates-Ligh";
+    font-size: 16px;
+    color: #00C8FF;
+    background: none;
+    border: solid 1px #00C8FF;
+    border-radius: 16px;
+    width: 200px;
+    height: 40px;
+    transition: 300ms;
 }
 
 .button button:hover {
-   color: #ffffff;
-   background-color: #00C8FF;
-   border: none;
-   transition: 500ms;
+    color: #ffffff;
+    background-color: #00C8FF;
+    border: none;
+    transition: 500ms;
 }
 
 .vibor {
-   display: flex;
-   gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 

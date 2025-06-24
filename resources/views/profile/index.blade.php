@@ -74,11 +74,14 @@
 
                 <div class="card-position">
                     @foreach($recipes as $recipe)
-                        <div class="card-resipt">
-                            <img src="{{asset($recipe->image)}}" alt="">
-                            <h1>{{__($recipe->title)}}</h1>
-                            <p>{{__($recipe->category->name)}}</p>
-                        </div>
+                        <a href="{{route('recipe.show', $recipe->id)}}">
+                            <div class="card-resipt">
+                                <img src="{{asset($recipe->image)}}" alt="">
+                                <h1>{{__($recipe->title)}}</h1>
+                                <p>{{__($recipe->category->name)}}</p>
+                            </div>
+                        </a>
+
                     @endforeach
                 </div>
             </div>
